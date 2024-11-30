@@ -28,6 +28,13 @@
     --color-background: #1b1a1a;
 
     --color-white-high:  #e3e3e3;
+
+    --color-yellow-mid: #FFD700;
+    --color-yellow-dark: #FFAA00;
+
+    --color-background: #000000;
+    --color-text: #ffffff;
+    --color-text-muted: #d3d3d3;
 }
 
 /* COMMON PAGE */
@@ -67,7 +74,7 @@ a {
 }
 
 .btn:hover {
-    background: var(--color-green-11);
+    background: var(--color-yellow-mid);
     color: var(--color-white-high);
 }
 
@@ -112,13 +119,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-orange);
+    color: var(--color-yellow-dark);
     font-size: 20px;
     font-weight: 700;
 } 
 
 #header .logo img {
-    width: 150px;
+    width: 125px;
     padding: 0 20px;
 } 
 
@@ -143,12 +150,12 @@ a {
 
 #navbar li a:hover,
 #navbar li a.active:hover {
-    color: var(--color-green-11);
+    color: var(--color-yellow-mid);
 }
 
 /* BOUTON ACCUEIL */ 
 #navbar li a.active {
-    color: var(--color-orange-mid);
+    color: var(--color-yellow-dark);
 }
 
 /* bar en dessous du bouton */
@@ -158,7 +165,7 @@ a {
     content: "";
     width: 30%;
     height: 2px;
-    background: var(--color-orange-mid);
+    background: var(--color-yellow-dark);
     bottom: -3px;
     left: 20px;
     position: absolute;
@@ -170,7 +177,7 @@ a {
     content: "";
     width: 30%;
     height: 2px;
-    background: var(--color-green-11);
+    background: var(--color-yellow-mid);
     bottom: -3px;
     left: 20px;
     position: absolute;
@@ -218,7 +225,7 @@ a {
 }
 
 #footer .footer_container ul li a:hover {
-    color: var(--color-green-11);
+    color: var(--color-yellow-mid);
 }
 
 #footer #footer_contactus {
@@ -237,12 +244,13 @@ a {
 
 
 #footer .footer_container h3 {
-    color: var(--color-orange-mid);
+    color: var(--color-yellow-dark);
     font-size: 20px;
     font-weight: 700;
     padding-bottom: 10px;
 }
 
+/* dimension image tout en bas */
 #footer #footer_lawtsider img {
     width: 102px;  
 }
@@ -273,7 +281,7 @@ a {
 .textleft h1 {
     font-size: 56px;
     font-weight: 700;
-    color: var(--color-orange-mid);
+    color: var(--color-yellow-dark);
 }
 
 
@@ -283,7 +291,7 @@ a {
     padding-left: 21px;
     font-size: 30px;
     font-weight: 700;
-    color: var(--color-orange-low);
+    color: var(--color-yellow-dark);
 }
 
 .textleft p {
@@ -299,49 +307,185 @@ a {
 }
 
     /* Hero Section */
-#hero {
-    /* background : linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%); */
-    background-image: url("assets/fond/fond.png");
-    height: 672px;
-    width: 100%;
-    background-size: cover;
-    background-position: top 40% right 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* box-shadow: 0 10px 20px var(--color-grey); */
-    z-index: 4;
-    position: relative;
-}
+    #hero {
+        background : var(--color-white);
+       /*background-image: url("assets/fond/fond.png");*/
+       height: 672px;
+       width: 100%;
+       background-size: cover;
+       background-position: top 40% right 0;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       /* box-shadow: 0 10px 20px var(--color-grey); */
+       z-index: 4;
+       position: relative;
+   }
+   
+   #hero .imgleft {
+       position: absolute;
+       padding-left: 120px;
+       right: 150px;
+       display: flex;
+       width: 600px;
+   }
+   
+   #hero .textright {
+       position: relative;
+       top: -170px;
+       padding-left: 100px;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-end;
+   }
+   
+   #hero .textright h1 {
+       font-size: 56px;
+       font-weight: 700;
+       text-align: start;
+       color: var(--color-background);
+   }
+   
+   #hero .textright img {
+       padding-left: 20px;
+       width: 105px;
+   }
 
-#hero .imgleft {
-    position: relative;
-    padding-left: 120px;
-    display: flex;
-    width: 600px;
-}
+   #hero .highlightrapidite {
+        font-size: 72px; /* Ajustez la taille selon vos besoins */
+        color: var(--color-yellow-dark); /* Remplacez par la couleur de votre choix */
+        font-weight: 800; /* Optionnel : pour accentuer */
+    }
 
-#hero .textright {
-    position: relative;
-    top: -20px;
-    padding-right: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+    #hero .highlightpriorite {
+        font-size: 72px; /* Ajustez la taille selon vos besoins */
+        color: var(--color-yellow-dark); /* Remplacez par la couleur de votre choix */
+        font-weight: 800; /* Optionnel : pour accentuer */
+    }
 
-#hero .textright h1 {
-    font-size: 56px;
-    font-weight: 700;
-    text-align: end;
-    color: var(--color-orange-mid);
-}
+    #hero .description {
+        position: absolute;
+        left: 100px;
+        top: 350px;
+        padding-right: 800px;
+        text-align:justify; /* Centrer la description sous le texte */
+    }
+    
+    /*#hero .description h1 {
+        top: 1000px;
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--color-background);
+        padding-right: 50px; /* Ajusté si nécessaire 
+    }*/
+    
+    #hero .highlightdescription {
+        font-size: 30px;
+        color: var(--color-yellow-dark);
+        font-weight: 800;
+    }
 
-#hero .textright img {
-    padding-right: 20px;
-    width: 105px;
-}
+    /* Section Image Slider */
 
+    #image-slider {
+        margin: 0px 0;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: var(--color-white); /* Optionnel, ajustez si besoin */
+        padding: 20px;
+    }
+
+    #image-slider .textleftimageslider {
+        position: absolute;
+        left: 100px;
+        top: 875px;
+        font-size: 30px;
+        color: var(--color-background);
+        font-weight: 800;
+    }
+    
+    #image-slider .bouttonimageslider {
+        /*position: absolute;
+        left: 400px;
+        top: 1100px;*/
+        border: 0;
+        background: transparent;
+        color: var(--color-white);
+        position: absolute;
+        right: 999px;
+        top: 1080px;
+        overflow: hidden;
+        padding: 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1.5em;
+        box-shadow: 0px -0px 0px 0px rgb(243, 113, 0), 0px 0px 0px 0px rgba(245, 59, 3, 0.982);
+        transition: all .2s;
+    }
+
+    #image-slider .buttoncolor{
+        color: var(--color-background);
+    }
+
+    #image-slider .bouttonimageslider::after {
+        content: "";
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(225deg, #dbf804 0%, #f08b08 50%, #f01b0c 100%);
+        position: absolute;
+        left: -50px;
+        top: -100px;
+        z-index: -1;
+        transition: all .2s;
+    }
+
+    #image-slider .bouttonimageslider:hover::after {
+        transform: rotate(150deg);
+    }
+
+    #image-slider .bouttonimageslider:hover {
+        transform: translate(0, -6px);
+        box-shadow: 10px -10px 25px 0px rgb(250, 97, 2), -10px 10px 25px 0px rgb(255, 143, 39);
+    }
+
+    #image-slider .highlightdescription {
+        font-size: 45px;
+        color: var(--color-yellow-dark);
+        font-weight: 800;
+    }
+
+    .slider-container {
+        width: 550px; /* Ajustez selon vos besoins */
+        height: 450px; /* Ajustez selon vos besoins */
+        overflow: hidden;
+        border: 5px solid var(--color-rouge); /* Bordure blanche */
+        box-shadow: 0 0 10px #e95a5a;
+    }
+
+    .slider {
+        display: flex;
+        flex-direction: column;
+        animation: slide-loop 8s linear infinite; /* Durée réglable */
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Animation du défilement */
+    @keyframes slide-loop {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(calc(-100% + 500px)); /* Ajustez selon le nombre et la taille des images */
+        }
+    }
+
+    
 
     /* Event Section */
 #news {
@@ -373,7 +517,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: var(--color-orange-mid);
+    background-color: var(--color-yellow-dark);
     padding: 5px;
     border-radius: 15px;
     text-align: center;
@@ -428,11 +572,11 @@ a {
     font-size: 56px;
     font-weight: 700;
     text-align: end;
-    color: var(--color-orange-mid);
+    color: var(--color-yellow-dark);
 }
 
 #install .textright h2 {
-    color: var(--color-orange-low);
+    color: var(--color-yellow-dark);
 }
 
 
@@ -441,7 +585,7 @@ a {
 
 /* STATS PAGE */
 #stats {
-    background-color: var(--color-green-11);
+    background-color: var(--color-yellow-mid);
     height: 672px;
     width: 100%;
     background-size: cover;
@@ -458,7 +602,7 @@ a {
     position: relative;
     display: flex;
     padding: 20px;
-    background-color: var(--color-orange-mid);
+    background-color: var(--color-yellow-dark);
     border-radius: 20px;
 }
 
@@ -523,9 +667,9 @@ a {
         box-shadow: 0 40px 60px #000000;
         padding: 80px 0 0 10px;
         transition: 0.4s;
-        border-left: solid var(--color-green-11);
-        border-top: solid var(--color-green-11);
-        border-bottom: solid var(--color-green-11);
+        border-left: solid var(--color-yellow-mid);
+        border-top: solid var(--color-yellow-mid);
+        border-bottom: solid var(--color-yellow-mid);
 
     }
 
@@ -556,7 +700,7 @@ a {
     }
 
     #mobile i:hover {
-        color: var(--color-green-11);
+        color: var(--color-yellow-mid);
     }
 
     #close {
@@ -569,7 +713,7 @@ a {
     }
 
     #close:hover {
-        color: var(--color-green-11);
+        color: var(--color-yellow-mid);
     }
     
 
@@ -801,14 +945,19 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-orange-mid);
+        color: var(--color-yellow-dark);
         font-size: 20px;
         font-weight: 700;
     } 
     
     #header .logo2 img {
-        width: 150px;
+        width: 1500px;
         padding: 0 20px;
+    }
+
+    #hero .logosam {
+        padding-right: 0px;
+        width: 100px;
     }
     
     /* HERO SECTION */
@@ -900,3 +1049,6 @@ a {
         }
     }
 }
+
+
+
