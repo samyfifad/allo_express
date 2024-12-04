@@ -50,7 +50,7 @@
 
 body {
     width: 100%;
-    background-color: #1b1a1a;
+    background-color: rgb(20, 20, 20);
 }
 
 a {
@@ -92,21 +92,26 @@ a {
     background: var(--color-rouge);
     /* color: var(--color-white); */
 }
-
-
-    /* Header settings */
+    
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
-    background-color: var(--color-white-high); 
-    box-shadow: 0 5px 15px #000000;
+    padding: 2px 80px;
+    background-color: rgb(20, 20, 20);  /* Start as transparent */
+    box-shadow: none; /* Remove shadow for transparency */
     z-index: 997;
     position: sticky;
     top: 0;
     left: 0;
-    transition: 0.3s;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#header.solid {
+    background-color: var(--color-white-high); /* Solid background */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow when solid */
 }
 
 
@@ -183,6 +188,35 @@ a {
     position: absolute;
 }
 
+#navbar li .sous-nav {
+    list-style: none;
+    display: none;
+    flex-direction: column; /* Aligne les sous-éléments horizontalement */
+    gap: 20px; /* Ajoute de l’espace entre les sous-éléments */
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--color-white-high); /* Par défaut : blanc */
+    transition: var(--color-background) 0.3s ease; /* Transition fluide */
+    align-items: center;
+    position: absolute;
+    left: -150px;
+    right: -170px;
+    top: 100%; /* Place le sous-menu juste en dessous du parent */
+    z-index: 10; /* Assure que la liste apparaît par-dessus les autres éléments */
+    border-radius: 50px;
+}
+
+#navbar li.has-sous-nav {
+    position: relative; /* Nécessaire pour positionner le sous-menu */
+}
+
+#navbar li.has-sous-nav:hover .sous-nav,
+#navbar li.has-sous-nav .sous-nav:hover {
+    display: flex; /* Rend le sous-menu visible tant que la souris est sur le parent ou le sous-menu */
+}
+
 #mobile {
     display: none;
     align-items: center;
@@ -191,6 +225,7 @@ a {
 #close {
     display: none;
 }
+
 
 
     /* Footer settings */
@@ -306,187 +341,203 @@ a {
     width: 150px;
 }
 
-    /* Hero Section */
-    #hero {
-        background : var(--color-white);
-       /*background-image: url("assets/fond/fond.png");*/
-       height: 672px;
-       width: 100%;
-       background-size: cover;
-       background-position: top 40% right 0;
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-       /* box-shadow: 0 10px 20px var(--color-grey); */
-       z-index: 4;
-       position: relative;
-   }
-   
-   #hero .imgleft {
-       position: absolute;
-       padding-left: 10px;
-       top: 75px;
-       right: 115px;
-       display: flex;
-       width: 500px;
-   }
-   
-   #hero .textright {
-       position: relative;
-       top: -170px;
-       padding-left: 100px;
-       display: flex;
-       flex-direction: column;
-       align-items: flex-end;
-   }
-   
-   #hero .textright h1 {
-       font-size: 56px;
-       font-weight: 700;
-       text-align: start;
-       color: var(--color-background);
-   }
-   
-   #hero .textright img {
-       padding-left: 20px;
-       width: 105px;
-   }
+/* Hero Section */
+#hero {
+    position: relative;
+    height: 640px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+    overflow: hidden; /* Important pour contenir le flou */
+}
 
-   #hero .highlightrapidite {
-        font-size: 72px; /* Ajustez la taille selon vos besoins */
-        color: var(--color-yellow-dark); /* Remplacez par la couleur de votre choix */
-        font-weight: 800; /* Optionnel : pour accentuer */
-    }
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/fond/Untitled.png");
+    background-size: cover;
+    background-position: top 15% left 0;
+    filter: blur(0px); /* Applique un flou */
+    z-index: -1; /* Place le pseudo-élément derrière le contenu */
+    border-end-end-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
 
-    #hero .highlightpriorite {
-        font-size: 72px; /* Ajustez la taille selon vos besoins */
-        color: var(--color-yellow-dark); /* Remplacez par la couleur de votre choix */
-        font-weight: 800; /* Optionnel : pour accentuer */
-    }
+#hero-content { 
+    position: relative; 
+    z-index: 1; /* Assure que le contenu est au-dessus du flou */
+}
+#hero .imgleft {
+   position: absolute;
+   padding-left: 10px;
+   top: 0px;
+   right: 0px;
+   display: flex;
+   width: 500px;       
+}
 
-    #hero .description {
-        position: absolute;
-        left: 100px;
-        top: 350px;
-        padding-right: 800px;
-        text-align:justify; /* Centrer la description sous le texte */
-    }
-    
-    /*#hero .description h1 {
-        top: 1000px;
-        font-size: 25px;
-        font-weight: 500;
-        color: var(--color-background);
-        padding-right: 50px; /* Ajusté si nécessaire 
-    }*/
-    
-    #hero .highlightdescription {
-        font-size: 30px;
-        color: var(--color-yellow-dark);
-        font-weight: 800;
-    }
+#hero .textright {
+   position: relative;
+   top: -70px;
+   left: 65px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+}
 
-    /* Section Image Slider */
+#hero .textright h1 {
+   font-size: 56px;
+   font-weight: 700;
+   text-align: center;
+   color: var(--color-background);
+}
 
-    #image-slider {
-        margin: 0px 0;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        background-color: var(--color-white); /* Optionnel, ajustez si besoin */
-        padding: 20px;
-    }
+#hero .textright img {
+   padding-left: 20px;
+   width: 105px;
+}
 
-    #image-slider .textleftimageslider {
-        position: absolute;
-        left: 100px;
-        top: 875px;
-        font-size: 30px;
-        color: var(--color-background);
-        font-weight: 800;
-    }
-    
-    #image-slider .bouttonimageslider {
-        /*position: absolute;
-        left: 400px;
-        top: 1100px;*/
-        border: 0;
-        background: transparent;
-        color: var(--color-white);
-        position: absolute;
-        right: 999px;
-        top: 1080px;
-        overflow: hidden;
-        padding: 20px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-size: 1.5em;
-        box-shadow: 0px -0px 0px 0px rgb(243, 113, 0), 0px 0px 0px 0px rgba(245, 59, 3, 0.982);
-        transition: all .2s;
-    }
+#hero .highlightrapidite {
+    font-size: 72px; /* Ajustez la taille selon vos besoins */
+    color: var(--color-orange-dark); /* Remplacez par la couleur de votre choix */
+    font-weight: 800; /* Optionnel : pour accentuer */
+}
 
-    #image-slider .buttoncolor{
-        color: var(--color-background);
-    }
+#hero .highlightpriorite {
+    font-size: 72px; /* Ajustez la taille selon vos besoins */
+    color: var(--color-orange-dark); /* Remplacez par la couleur de votre choix */
+    font-weight: 800; /* Optionnel : pour accentuer */
+}
 
-    #image-slider .bouttonimageslider::after {
-        content: "";
-        width: 400px;
-        height: 400px;
-        background: linear-gradient(225deg, #dbf804 0%, #f08b08 50%, #f01b0c 100%);
-        position: absolute;
-        left: -50px;
-        top: -100px;
-        z-index: -1;
-        transition: all .2s;
-    }
+#hero .description {
+    position: relative;
+    top: 40px;
+    text-align: center;
+    left:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #000;
+}
 
-    #image-slider .bouttonimageslider:hover::after {
-        transform: rotate(150deg);
-    }
+#hero .highlightdescription {
+    font-size: 30px;
+    color: var(--color-orange-dark);
+    font-weight: 800;
+}
 
-    #image-slider .bouttonimageslider:hover {
-        transform: translate(0, -6px);
-        box-shadow: 10px -10px 25px 0px rgb(250, 97, 2), -10px 10px 25px 0px rgb(255, 143, 39);
-    }
+/* Section Image Slider */
 
-    #image-slider .highlightdescription {
-        font-size: 45px;
-        color: var(--color-yellow-dark);
-        font-weight: 800;
-    }
+#image-slider {
+    margin: 0px 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 150px;
+    padding-top: 80px;
+}
 
-    .slider-container {
-        width: 550px; /* Ajustez selon vos besoins */
-        height: 450px; /* Ajustez selon vos besoins */
-        overflow: hidden;
-        border: 5px solid var(--color-rouge); /* Bordure blanche */
-        box-shadow: 0 0 10px #e95a5a;
-    }
+#image-slider .textleftimageslider {
+    position: relative;
+    left: -150px;
+    right: 200px;
+    top: -40px;
+    font-size: 30px;
+    color: var(--color-white-high);
+    font-weight: 800;
+}
 
-    .slider {
-        display: flex;
-        flex-direction: column;
-        animation: slide-loop 8s linear infinite; /* Durée réglable */
-    }
+#image-slider .bouttonimageslider {
+    /*position: absolute;
+    left: 400px;
+    top: 1100px;*/
+    border: 0;
+    background: transparent;
+    color: var(--color-white);
+    position: relative;
+    right: 200px;
+    left: -450px;
+    top: 140px;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.5em;
+    box-shadow: 0px -0px 0px 0px rgb(243, 113, 0), 0px 0px 0px 0px rgba(245, 59, 3, 0.982);
+    transition: all .2s;
+}
 
-    .slider img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+#image-slider .buttoncolor{
+    color: var(--color-background);
+}
 
-    /* Animation du défilement */
-    @keyframes slide-loop {
-        0% {
-            transform: translateY(0);
-        }
-        100% {
-            transform: translateY(calc(-100% + 500px)); /* Ajustez selon le nombre et la taille des images */
-        }
-    }
+#image-slider .bouttonimageslider::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(225deg, #dbf804 0%, #f08b08 50%, #f01b0c 100%);
+    position: absolute;
+    left: -50px;
+    top: -100px;
+    z-index: -1;
+    transition: all .2s;
+}
 
-    
+#image-slider .bouttonimageslider:hover::after {
+    transform: rotate(150deg);
+}
+
+#image-slider .bouttonimageslider:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0px rgb(250, 97, 2), -10px 10px 25px 0px rgb(255, 143, 39);
+}
+
+#image-slider .highlightdescription {
+    font-size: 45px;
+    color: var(--color-yellow-dark);
+    font-weight: 800;
+}
+
+.slider-container {
+    width: 550px; /* Ajustez selon vos besoins */
+    height: 450px; /* Ajustez selon vos besoins */
+    overflow: hidden;
+    border: 5px solid var(--color-orange-dark); /* Bordure blanche */
+    box-shadow: 0 0 10px var(--color-orange-mid);
+    border-radius: 40%;
+    position: relative;
+    right: 100px;
+    top: 78px;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    animation: slide-loop 8s linear infinite; /* Durée réglable */
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animation du défilement */
+@keyframes slide-loop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-100% + 500px)); /* Ajustez selon le nombre et la taille des images */
+    }
+}   
 
     /* Event Section */
 #news {
@@ -1050,6 +1101,3 @@ a {
         }
     }
 }
-
-
-
