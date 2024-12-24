@@ -134,6 +134,15 @@ a {
     padding: 0 20px;
 } 
 
+#logo {
+    transition: all 0.3s ease;
+}
+
+#header.scrolled #logo {
+    content: url('assets/logo/logo_noir.png'); /* Change l'image */
+}
+
+
     /* NAVBAR */
 #navbar {
     display: flex;
@@ -341,7 +350,82 @@ a {
     width: 150px;
 }
 
+
 /* Hero Section */
+#hero {
+    width: 100%;
+    min-height: 640px;
+    background: linear-gradient(135deg, var(--color-yellow-mid) 5%, var(--color-yellow-dark) 70%, var(--color-orange-mid) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0px 0;
+    overflow: hidden;
+}
+
+#hero .hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+}
+
+#hero .hero-text {
+    flex: 1;
+    text-align: left;
+    color: var(--color-background);
+    padding-right: 20px;
+}
+
+#hero .hero-text h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--color-background);
+}
+
+#hero .hero-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--color-grey-light);
+}
+
+#hero .hero-text .btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-background);
+    background-color: var(--color-orange-dark);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#hero .hero-text .btn:hover {
+    background-color: var(--color-orange-light);
+}
+
+#hero .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero .hero-image img {
+    max-width: 200%;
+    height: 50%;
+}
+
+
+
+
+/* Hero Section 
 #hero {
     position: relative;
     height: 640px;
@@ -350,7 +434,7 @@ a {
     align-items: center;
     justify-content: space-between;
     z-index: 4;
-    overflow: hidden; /* Important pour contenir le flou */
+    overflow: hidden; /* Important pour contenir le flou 
 }
 
 #hero::before {
@@ -363,15 +447,15 @@ a {
     background-image: url("assets/fond/Untitled.png");
     background-size: cover;
     background-position: top 15% left 0;
-    filter: blur(0px); /* Applique un flou */
-    z-index: -1; /* Place le pseudo-élément derrière le contenu */
+    filter: blur(0px); /* Applique un flou 
+    z-index: -1; /* Place le pseudo-élément derrière le contenu 
     border-end-end-radius: 20%;
     border-bottom-left-radius: 20%;
 }
 
 #hero-content { 
     position: relative; 
-    z-index: 1; /* Assure que le contenu est au-dessus du flou */
+    z-index: 1; /* Assure que le contenu est au-dessus du flou 
 }
 #hero .imgleft {
    position: absolute;
@@ -404,15 +488,15 @@ a {
 }
 
 #hero .highlightrapidite {
-    font-size: 72px; /* Ajustez la taille selon vos besoins */
-    color: var(--color-orange-dark); /* Remplacez par la couleur de votre choix */
-    font-weight: 800; /* Optionnel : pour accentuer */
+    font-size: 72px; /* Ajustez la taille selon vos besoins
+    color: var(--color-orange-dark); /* Remplacez par la couleur de votre choix 
+    font-weight: 800; /* Optionnel : pour accentuer 
 }
 
 #hero .highlightpriorite {
-    font-size: 72px; /* Ajustez la taille selon vos besoins */
-    color: var(--color-orange-dark); /* Remplacez par la couleur de votre choix */
-    font-weight: 800; /* Optionnel : pour accentuer */
+    font-size: 72px; /* Ajustez la taille selon vos besoins 
+    color: var(--color-orange-dark); /* Remplacez par la couleur de votre choix 
+    font-weight: 800; /* Optionnel : pour accentuer 
 }
 
 #hero .description {
