@@ -9,7 +9,7 @@
     --color-grey: #494848;
     --color-orange-low: #FBDB9E;
     --color-orange-mid: #EE9845;
-    --color-orange-dark: #AE421E;
+    --color-orange-dark: #ae421e;
     --color-green-0: #4A653C;
     --color-green-1: #687A40;
     --color-green-2: #97A033;
@@ -706,6 +706,7 @@ a {
     /* border-bottom: 3px var(--color-orange-mid); */
     z-index: 3;
     position: relative;
+    padding-top: 80px;
 }
 
 #news .imgright {
@@ -743,6 +744,53 @@ a {
     margin-right: 21px;
 }
 
+    /* Event Section */
+    #postuler {
+        height: 672px;
+        width: 100%;
+        background-size: cover;
+        background-position: top 25% right 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background : linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%); */
+        /* border-bottom: 3px var(--color-orange-mid); */
+        z-index: 3;
+        position: relative;
+    }
+    
+    #postuler .imgright {
+        position: relative;
+        /* padding: 0 0 0 120px; */
+        display: flex;
+        width: 700px;
+        border-radius: 15px;
+    }
+    
+    #imagepostuler {
+        position: relative;
+        top: -20px;
+        margin-right: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        border-radius: 15px;
+        text-align: center;
+    }
+    
+    
+    #imagepostuler h2 {
+        position: relative;
+        /* bottom: -10px; */
+        /* padding-right: 21px; */
+        font-size: 38px;
+        font-weight: 700;
+        color: var(--color-grey-light);
+    }
+    
+    #postuler .textright .btn {
+        margin-right: 21px;
+    }
 
 /* ======================================================= */
 
@@ -984,6 +1032,14 @@ a {
         width: 300px;
     }
 
+    #postuler .textleft h2, #install .textright h2 {
+        font-size: 25px;
+    }
+
+    #imagepostuler .imgright {
+        width: 300px;
+    }
+
     #install .imgleft {
         width: 260px;
     }
@@ -991,7 +1047,7 @@ a {
 
 
 @media (max-width: 897px) {
-    #hero, #news, #install, #stats {
+    #hero, #news, #install, #stats, #postuler {
         height: 450px;
     }
 
@@ -1001,6 +1057,15 @@ a {
     }
 
     #newsSoon {
+        margin-right: 75px;
+    }
+
+    #postuler .textleft {
+        padding-left: 75px;
+        padding-right: 0;
+    }
+
+    #imagepostuler {
         margin-right: 75px;
     }
 
@@ -1059,7 +1124,7 @@ a {
         width: 285px;
     }
 
-    #newsSoon h2 {
+    #imagepostuler h2 {
         font-size: 20px;
     }
 }
@@ -1070,6 +1135,10 @@ a {
     }
 
     #news #newsSoon {
+        margin-left: 10px;
+    }
+
+    #postuler #imagepostuler {
         margin-left: 10px;
     }
 }
@@ -1083,6 +1152,14 @@ a {
         margin-right: 50px;
     }
 
+    #postuler .textleft {
+        padding-left: 50px;
+    }
+
+    #postuler #imagepostuler {
+        margin-right: 50px;
+    }
+
     #install .textright
     {
         padding-right: 50px;
@@ -1093,7 +1170,7 @@ a {
         width: 250px;
     }
     
-    #news #newsSoon {
+    #postuler #imagepostuler {
         margin-left: 10px;
     }
 }
@@ -1159,6 +1236,14 @@ a {
     }
 
     #news #newsSoon {
+        margin-right: 0;
+    }
+
+    #postuler .textleft {
+        padding-left: 0;
+    }
+
+    #postuler #imagepostuler {
         margin-right: 0;
     }
 
