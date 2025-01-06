@@ -51,3 +51,11 @@ window.addEventListener("scroll", function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const selectBtn = document.querySelector('.select-btn');
+    const options = document.querySelector('.options');
+
+    selectBtn.addEventListener('click', () => {
+        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    });
+});
