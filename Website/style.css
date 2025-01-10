@@ -304,6 +304,35 @@ a {
     width: 102px;  
 }
 
+#footer_contactus ul.privacy li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-background); /* Couleur cohérente avec le thème */
+    text-decoration: none;
+    margin-bottom: 2px; /* Espacement entre les éléments */
+}
+
+#footer_contactus ul.privacy li a:hover {
+    color: var(--color-orange-mid); /* Couleur orange au survol */
+}
+
+#footer_contactus .btn-localiser {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0px;
+    color: #000000;
+    padding: 5px 0px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+
+
 #github_link {
     color: var(--color-background);
     text-decoration: none;
@@ -649,8 +678,8 @@ a {
 /* Slider Container */
 /* Slider Container */
 .slider-container {
-    width: 80%; /* Prend toute la largeur horizontale */
-    height: 180px; /* Faible hauteur pour un rectangle étroit */
+    width: 70%; /* Prend toute la largeur horizontale */
+    height: 170px; /* Faible hauteur pour un rectangle étroit */
     overflow: hidden;
     border: 5px solid var(--color-orange-dark);
     box-shadow: 0 0 10px var(--color-orange-mid);
@@ -667,7 +696,7 @@ a {
 }
 
 .slider img {
-    width: auto; /* Conserve le ratio d'origine de l'image */
+    width: 17%; /* Conserve le ratio d'origine de l'image */
     height: 100%; /* Adapte la hauteur de l'image au conteneur */
     flex-shrink: 0; /* Empêche le rétrécissement des images */
 }
@@ -679,7 +708,7 @@ a {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-100% + 100vw)); /* Défile vers la gauche */
+        transform: translateX(calc(-100% + 135vw)); /* Défile vers la gauche */
     }
 }
 
@@ -926,63 +955,217 @@ a {
 }
 
 
-#dropdown-menu{
-    width: 380px;
-    margin: 140px auto;
+/* Base Styles */
+#dropdown-menu {
+    width: 600px;
+    margin: 60px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
-#dropdown-menu .select-btn{
+
+#dropdown-menu .intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#dropdown-menu .intro-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#dropdown-menu .intro-text {
+    max-width: 400px;
+    text-align: left;
+}
+
+#dropdown-menu .intro-text h2 {
+    font-size: 24px;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+#dropdown-menu .intro-text p {
+    font-size: 16px;
+    color: var(--color-grey-light);
+    margin-bottom: 20px;
+}
+
+#dropdown-menu .select-btn {
     display: flex;
     height: 55px;
     background: var(--color-orange-mid);
-    padding: 20px;
+    padding: 0 20px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     border-radius: 8px;
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
-#dropdown-menu .select-btn i{
+
+#dropdown-menu .select-btn:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+#dropdown-menu .select-btn i {
     font-size: 25px;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
-#dropdown-menu .select-btn i{
-    transform: rotate(-180deg);
+
+#dropdown-menu .select-btn.open i {
+    transform: rotate(180deg);
 }
-#dropdown-menu .options{
+
+#dropdown-menu .options {
     position: relative;
     padding: 15px;
-    margin-top: 7px;
+    margin-top: 10px;
     border-radius: 8px;
-    background: var(--color-orange-mid);
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
-    display: none;
+    background: var(--color-orange-low);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-height: 250px; /* Limit height for scrolling */
+    overflow-y: auto; /* Add scrollbar when content overflows */
+    display: none; /* Initially hidden */
+    transition: all 0.3s ease;
 }
-#dropdown-menu .options{
-    display: block;
+
+#dropdown-menu .options.open {
+    display: block; /* Show options when open */
 }
-#dropdown-menu  .option{
+
+#dropdown-menu .option {
     display: flex;
-    height: 55px;
+    height: 50px;
     cursor: pointer;
     padding: 10px 16px;
     border-radius: 8px;
     align-items: center;
     background: var(--color-orange-low);
-}
-#dropdown-menu .option:hover{
-    background: #F2F2F2;
-}
-#dropdown-menu .option i{
-    font-size: 25px;
-    margin-right: 12px;
-}
-#dropdown-menu .option-text{
-    font-size: 18px;
-    color: var(--color-background);
+    transition: all 0.3s ease;
 }
 
+#dropdown-menu .option:hover {
+    background: #f9f9f9;
+    color: var(--color-orange-mid);
+}
+
+#dropdown-menu .option-text {
+    font-size: 16px;
+    color: var(--color-background);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#dropdown-menu .option-text:hover {
+    color: var(--color-orange-mid);
+}
+
+/* Scrollbar Styles */
+#dropdown-menu .options::-webkit-scrollbar {
+    width: 6px;
+}
+
+#dropdown-menu .options::-webkit-scrollbar-thumb {
+    background: var(--color-orange-mid);
+    border-radius: 10px;
+}
+
+#dropdown-menu .options::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange-dark);
+}
+
+/* recruitment section */
+
+#recruitment-dossier {
+    padding: 60px 20px;
+    background-color: var(--color-orange-low);
+    color: var(--color-background);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.recruitment-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.recruitment-image {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recruitment-image img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.recruitment-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.recruitment-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-orange-mid);
+}
+
+.recruitment-list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.recruitment-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.recruitment-list li i {
+    color: var(--color-orange-mid);
+    font-size: 18px;
+}
+
+.btn-deposer {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-background);
+    background: var(--color-orange-mid);
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-deposer:hover {
+    background: var(--color-orange-dark);
+}
 
 
 
@@ -1805,6 +1988,178 @@ a {
         gap: 8px;
     }
 }
+
+/* Base Styles */
+#dropdown-menu {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 15px; /* Add padding for smaller screens */
+}
+
+#dropdown-menu .intro-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#dropdown-menu .intro-image {
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    height: auto;
+    flex: 1 1 150px; /* Allow image to shrink and grow responsively */
+}
+
+#dropdown-menu .intro-text {
+    flex: 1 1 300px; /* Allow text block to adjust responsively */
+    text-align: left;
+}
+
+/* For Tablets */
+@media (max-width: 768px) {
+    #dropdown-menu .intro-container {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+
+    #dropdown-menu .intro-text {
+        text-align: center; /* Center-align text for smaller screens */
+    }
+
+    #dropdown-menu .select-btn {
+        font-size: 16px; /* Slightly smaller font for smaller screens */
+        height: 50px;
+    }
+
+    #dropdown-menu .option-text {
+        font-size: 15px; /* Slightly smaller font size for options */
+    }
+}
+
+/* For Mobile */
+@media (max-width: 480px) {
+    #dropdown-menu {
+        margin: 20px auto;
+        padding: 0 10px; /* Reduce padding for small screens */
+    }
+
+    #dropdown-menu .intro-image {
+        flex: 1 1 100%; /* Let the image take the full width */
+        max-width: 200px; /* Cap the size of the image */
+    }
+
+    #dropdown-menu .intro-text {
+        font-size: 14px; /* Reduce text size for better readability */
+    }
+
+    #dropdown-menu .select-btn {
+        font-size: 14px; /* Smaller button text for mobile */
+        height: 45px;
+    }
+
+    #dropdown-menu .option-text {
+        font-size: 14px; /* Smaller font for dropdown options */
+    }
+
+    #dropdown-menu .options {
+        max-height: 150px; /* Reduce dropdown height for mobile */
+    }
+}
+
+/* For Larger Screens */
+@media (min-width: 1024px) {
+    #dropdown-menu .intro-container {
+        gap: 30px; /* Increase gap between image and text */
+    }
+
+    #dropdown-menu .intro-text h2 {
+        font-size: 28px; /* Larger heading for desktops */
+    }
+
+    #dropdown-menu .intro-text p {
+        font-size: 18px; /* Larger paragraph text for better readability */
+    }
+
+    #dropdown-menu .select-btn {
+        font-size: 20px; /* Larger font for the dropdown button */
+        height: 60px;
+    }
+
+    #dropdown-menu .option-text {
+        font-size: 18px; /* Larger font for dropdown options */
+    }
+}
+
+/* Media Queries */
+
+/* For tablets and smaller desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .recruitment-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .recruitment-image img {
+        width: 60%; /* Slightly narrower for smaller screens */
+    }
+
+    .recruitment-content {
+        text-align: center;
+    }
+
+    .btn-deposer {
+        margin: 0 auto;
+    }
+}
+
+/* For large smartphones (max-width: 768px) */
+@media (max-width: 768px) {
+    .recruitment-container {
+        gap: 20px;
+    }
+
+    .recruitment-image img {
+        width: 50%; /* Matches the updated width */
+        margin: auto;
+    }
+
+    .recruitment-content h2 {
+        font-size: 24px;
+    }
+
+    .recruitment-list {
+        font-size: 16px;
+    }
+
+    .btn-deposer {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+/* For small smartphones (max-width: 480px) */
+@media (max-width: 480px) {
+    .recruitment-image img {
+        width: 60%; /* Consistent with updated width */
+        margin: auto;
+    }
+
+    .recruitment-content h2 {
+        font-size: 22px;
+    }
+
+    .recruitment-list {
+        font-size: 14px;
+    }
+
+    .btn-deposer {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
 
 /*width*/
 ::-webkit-scrollbar {

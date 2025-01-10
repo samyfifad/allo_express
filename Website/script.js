@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = document.querySelector('.options');
 
     selectBtn.addEventListener('click', () => {
-        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+        options.classList.toggle('open'); // Toggle the dropdown visibility
+        selectBtn.classList.toggle('open'); // Rotate the icon
     });
 });
