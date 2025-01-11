@@ -2180,6 +2180,7 @@ a {
         text-align: center;
         position: relative;
         right: 50px;
+        width: 100%;
     }
 }
 
@@ -2204,6 +2205,9 @@ a {
     #partenariat .textright .btn {
         font-size: 16px;
         padding: 6px 15px;
+    }
+    #partenariat .textleft h1{
+        width: 100%;
     }
 }
 
