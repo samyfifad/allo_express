@@ -1845,6 +1845,19 @@ a {
     }
 }
 
+/* Media Query pour mobile */
+@media (max-width: 768px) {
+    
+    /* Conserve le logo à gauche */
+    #header .logo {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+
 /* General styles for #hero section are already defined */
 
 /* MEDIA QUERY MAX 1300px */
@@ -1957,6 +1970,16 @@ a {
     #imagepostuler h2 {
         font-size: 34px;
     }
+
+    #partenariat {
+        height: 600px;
+    }
+    #partenariat .imgright {
+        width: 600px;
+    }
+    #imagepartenariat h2 {
+        font-size: 34px;
+    }
 }
 
 /* MEDIA QUERY MAX 1200px */
@@ -1970,10 +1993,41 @@ a {
     #imagepostuler h2 {
         font-size: 30px;
     }
+
+    #partenariat {
+        height: 550px;
+    }
+    #partenariat .imgright {
+        width: 500px;
+    }
+    #imagepartenariat h2 {
+        font-size: 30px;
+    }
 }
 
 /* MEDIA QUERY MAX 1000px */
 @media (max-width: 1000px) {
+    #partenariat {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 20px;
+    }
+    #partenariat .imgright {
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    #imagepartenariat {
+        margin-right: 0;
+        align-items: center;
+    }
+    #imagepartenariat h2 {
+        font-size: 28px;
+    }
+    #partenariat .textright .btn {
+        margin: 0 auto;
+    }
+
     #postuler {
         flex-direction: column;
         height: auto;
@@ -2011,6 +2065,20 @@ a {
         font-size: 20px;
         padding: 10px 25px;
     }
+
+    #partenariat {
+        height: auto;
+    }
+    #partenariat .imgright {
+        width: 400px;
+    }
+    #imagepartenariat h2 {
+        font-size: 26px;
+    }
+    #partenariat .textright .btn {
+        font-size: 20px;
+        padding: 10px 25px;
+    }
 }
 
 /* MEDIA QUERY MAX 600px */
@@ -2029,6 +2097,36 @@ a {
         font-size: 18px;
         padding: 8px 20px;
     }
+
+    #partenariat {
+        flex-direction: column;
+        padding: 20px 0px;
+    }
+    #partenariat .imgright {
+        width: 300px;
+    }
+    #imagepartenariat h2 {
+        font-size: 22px;
+    }
+    #partenariat .textright .btn {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+    #partenariat .textleft .btn{
+        text-align: center;
+        position: relative;
+        right: 50px;
+    }
+    #partenariat .textleft h2{
+        text-align: center;
+        position: relative;
+        right: 60px;
+    }
+    #partenariat .textleft h1{
+        text-align: center;
+        position: relative;
+        right: 50px;
+    }
 }
 
 /* MEDIA QUERY MAX 400px */
@@ -2040,6 +2138,16 @@ a {
         font-size: 20px;
     }
     #postuler .textright .btn {
+        font-size: 16px;
+        padding: 6px 15px;
+    }
+    #partenariat .imgright {
+        width: 250px;
+    }
+    #imagepartenariat h2 {
+        font-size: 20px;
+    }
+    #partenariat .textright .btn {
         font-size: 16px;
         padding: 6px 15px;
     }
@@ -2359,82 +2467,7 @@ a {
     }
 }
 
-/* Medium Screens (Tablets and small laptops) */
-@media (max-width: 1024px) {
-    #partenariat {
-        height: auto; /* Adjust height dynamically */
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
-        padding: 20px;
-    }
 
-    #imagepartenariat {
-        margin-right: 0;
-        margin-top: 20px;
-        align-items: center;
-    }
-
-    #partenariat .imgright {
-        width: 500px;
-    }
-
-    #imagepartenariat h2 {
-        font-size: 32px; /* Reduce font size */
-    }
-}
-
-/* Small Screens (Phones) */
-@media (max-width: 768px) {
-    #partenariat {
-        height: auto;
-        padding: 15px;
-    }
-
-    #imagepartenariat {
-        margin-top: 20px;
-    }
-
-    #partenariat .imgright {
-        width: 300px; /* Further reduce image size */
-    }
-
-    #imagepartenariat h2 {
-        font-size: 28px;
-    }
-
-    #partenariat .textleft h1 {
-        font-size: 24px; /* Reduce headline size */
-    }
-
-    #partenariat .btn {
-        padding: 10px 20px; /* Adjust button size */
-        font-size: 16px;
-    }
-}
-
-/* Extra Small Screens (Very small phones) */
-@media (max-width: 480px) {
-    #partenariat {
-        padding: 10px;
-    }
-
-    #partenariat .imgright {
-        width: 250px; /* Smallest size for the image */
-    }
-
-    #imagepartenariat h2 {
-        font-size: 24px;
-    }
-
-    #partenariat .textleft h1 {
-        font-size: 20px;
-    }
-
-    #partenariat .btn {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-}
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
