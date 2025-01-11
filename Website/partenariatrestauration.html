@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITLE -->
-    <title>AlloExpress - Pôles</title>
+    <title>AlloExpress - Partenariat restauration</title>
     <!-- ICON SITE -->
     <link rel="shortcut icon" href="assets/logo/logo_noir.png" type="image/png">
     <!-- CSS -->
@@ -22,7 +22,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="#news">Offres</a></li>
                 <li class="has-sous-nav">
-                    <a href="#" class="active">Nos pôles</a>
+                    <a href="poles.html">Nos pôles</a>
                     <ul class="sous-nav">
                         <li><a href="restauration.html">• Pôle restauration</a></li>
                         <li><a href="e-commerce.html">• Pôle e-commerce</a></li>
@@ -33,7 +33,7 @@
                 <li class="has-sous-nav">
                     <a href="partenariat.html">partenariats</a>
                     <ul class="sous-nav">
-                        <li><a href="partenariatrestauration.html">• restauration</a></li>
+                        <li><a href="#" class="active">• restauration</a></li>
                         <li><a href="partenariate-commerce.html">• e-commerce</a></li>
                     </ul>
                 </li>
@@ -49,24 +49,64 @@
         
     </section> 
 
-    <section id="poles">
-        <div class="content">
-            <div class="image-container">
-                <img src="assets/fond/fondpole.png" alt="pôles">
-            </div>
-            <div class="text-container">
-                <div class="intro-text">
-                    <h2>Découvrez nos différents pôles</h2>
-                    <p>Nous proposons des services diversifiés pour répondre à vos besoins. Explorez les options ci-dessous :</p>
-                </div>
-                <div class="button-container">
-                    <a href="restauration.html" class="bouttonimageslider">Pôle restauration</a>
-                    <a href="e-commerce.html" class="bouttonimageslider">Pôle e-commerce</a>
-                    <a href="objet-personnel.html" class="bouttonimageslider">Pôle objet Personnel</a>
-                </div>
-            </div>
+    <section id="demande-partenariat">
+        <div class="container">
+            <h2>Demande de Partenariat - Restauration</h2>
+            <p>Remplissez les informations ci-dessous pour envoyer une demande de partenariat.</p>
+            <form id="partenariat-form">
+                <label for="ville">Ville :</label>
+                <input type="text" id="ville" name="ville" placeholder="Entrez votre ville" required>
+    
+                <label for="nom-restaurant">Nom du Restaurant :</label>
+                <input type="text" id="nom-restaurant" name="nom-restaurant" placeholder="Nom du restaurant" required>
+    
+                <label for="nom-proprietaire">Nom du Propriétaire :</label>
+                <input type="text" id="nom-proprietaire" name="nom-proprietaire" placeholder="Nom du propriétaire" required>
+    
+                <label for="type-cuisine">Type de Cuisine :</label>
+                <input type="text" id="type-cuisine" name="type-cuisine" placeholder="Type de cuisine" required>
+    
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+    
+                <label for="telephone">Numéro de Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Numéro de téléphone" required>
+    
+                <label for="adresse">Adresse du Restaurant :</label>
+                <input type="text" id="adresse" name="adresse" placeholder="Adresse complète" required>
+    
+                <button type="submit" id="submit-btn">Soumettre</button>
+            </form>
         </div>
     </section>
+
+    <script>
+        document.getElementById('partenariat-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+    
+            // Récupérer les données du formulaire
+            const ville = document.getElementById('ville').value;
+            const nomRestaurant = document.getElementById('nom-restaurant').value;
+            const nomProprietaire = document.getElementById('nom-proprietaire').value;
+            const typeCuisine = document.getElementById('type-cuisine').value;
+            const email = document.getElementById('email').value;
+            const telephone = document.getElementById('telephone').value;
+            const adresse = document.getElementById('adresse').value;
+    
+            // Générer l'URL mailto
+            const mailtoLink = `mailto:allo.express.dz@gmail.com?subject=Demande%20de%20Partenariat%20-%20Restauration&body=
+                Ville: ${ville}%0A
+                Nom du Restaurant: ${nomRestaurant}%0A
+                Nom du Propriétaire: ${nomProprietaire}%0A
+                Type de Cuisine: ${typeCuisine}%0A
+                Email: ${email}%0A
+                Téléphone: ${telephone}%0A
+                Adresse du Restaurant: ${adresse}`;
+    
+            // Ouvrir le lien mailto
+            window.location.href = mailtoLink;
+        });
+    </script>
     
 
     <footer id="footer">
