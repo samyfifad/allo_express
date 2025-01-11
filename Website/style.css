@@ -714,12 +714,33 @@ a {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    #image-slider {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        padding-bottom: 0px;
+        padding-top: 100px;
+    }
     #image-slider .textleftimageslider {
         font-size: 4vw;
     }
 
     #image-slider .highlightdescription {
         font-size: 5vw;
+    }
+    .slider-container {
+        width: 70%; /* Prend toute la largeur horizontale */
+        height: 65px; /* Faible hauteur pour un rectangle étroit */
+    }
+    #image-slider .bouttonimageslider {
+        padding: 10px;
+        border-radius: 30px;
+        font-size: 21px;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 }
 
@@ -1926,20 +1947,33 @@ a {
 @media (max-width: 600px) {
     #hero {
         height: auto;
-        padding: 30px 15px;
+        padding: 0px 0px;
     }
-    #hero .hero-text h1 {
-        font-size: 30px;
-    }
-    #hero .hero-text p {
-        font-size: 14px;
-    }
-    #hero .btn {
+   
+    #hero .hero-text .btn {
         font-size: 18px;
         padding: 8px 20px;
     }
+    
     #hero .hero-image img {
-        max-width: 100%;
+        position: relative;
+        left: 20px;
+        bottom: 20px;
+        max-width: 270%;
+    }
+    #hero .highlight.rapidite {
+        color: var(--color-orange-dark); /* Couleur spécifique pour "rapidité" */
+        font-weight: 800;
+        font-size: 40px;
+    }
+    #hero .highlight.priorite {
+        color: var(--color-orange-dark); /* Couleur spécifique pour "priorité" */
+        font-weight: 800;
+        font-size: 40px;
+    }
+    #hero .highlight {
+        font-size: 20px;
+        color: var(--color-orange-dark);
     }
 }
 
