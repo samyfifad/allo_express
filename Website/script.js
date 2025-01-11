@@ -60,3 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
         selectBtn.classList.toggle('open'); // Rotate the icon
     });
 });
+
+
+const callBtn = document.getElementById("call-btn");
+const modal = document.getElementById("call-modal");
+const closeModal = document.getElementById("close-modal");
+
+// Ouvre le modal
+callBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
+
+// Ferme le modal
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Fermer le modal en cliquant à l'extérieur
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
