@@ -1833,6 +1833,11 @@ a {
         font-size: 15px;
     }
 
+    #footer {
+        flex-direction: column;
+        height: auto;
+    }
+
     #footer_lawtsider p,
     #footer_aboutus p,
     #footer_contactus p {
@@ -1957,7 +1962,7 @@ a {
     
     #hero .hero-image img {
         position: relative;
-        left: 20px;
+        left: 25px;
         bottom: 20px;
         max-width: 270%;
     }
