@@ -2182,6 +2182,8 @@ a {
         right: 50px;
         width: 100%;
         font-size: 45px;
+        white-space: nowrap;
+        overflow: visible;
     }
 }
 
