@@ -1838,6 +1838,21 @@ a {
         height: auto;
     }
 
+    #footer #footer_contactus {
+        margin-bottom: 50px;
+        
+    }
+
+    #footer_contactus ul.privacy li a {
+        position: relative;
+        left: 30px;
+    }
+
+    #footer .footer_container {
+        margin-top: 50px;
+        
+    }
+
     #footer_lawtsider p,
     #footer_aboutus p,
     #footer_contactus p {
